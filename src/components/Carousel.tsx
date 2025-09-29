@@ -25,7 +25,7 @@ const Carousel = () => {
       embla__slide 
       min-w-0
       flex items-center justify-center
-      p-2
+      p-1
       flex-[0_0_90%]   /* mobile: 1 slide per view */
       lg:flex-[0_0_28%] /* desktops: ~3.5 slides */
     "
@@ -33,7 +33,7 @@ const Carousel = () => {
             <img
               src={slide.src}
               alt={slide.alt}
-              className="w-full h-[240px] object-cover rounded-lg"
+              className="w-full h-[clamp(230px,30vw,800px)] object-cover rounded-lg"
             />
           </div>
         ))}
