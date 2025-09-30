@@ -1,5 +1,4 @@
-import React from "react";
-import trees from "../../assets/trees.jpg";
+import trees from "../assets/trees.jpg";
 
 const WorkCard = () => {
   return (
