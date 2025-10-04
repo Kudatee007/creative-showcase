@@ -20,12 +20,44 @@ const WorkGrid = () => {
       </div>
       <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 md:gap-y-8 lg:grid-cols-3 items-stretch">
         <div className="lg:col-span-2">
-          <WorkCard />
+          <WorkCard
+            src={"/public/videos/mixkit-animation-of-buildings-popping-up-on-a-street-99712-hd-ready.mp4"}
+            // poster={trees}
+            // src={s.src}
+            // poster={s.poster}
+            // className="h-[clamp(230px,30vw,800px)] w-full object-cover rounded-lg"
+            resetOnLeave
+            playFromStartOnEnter={false}
+          />
         </div>
-        <WorkCard />
-        <WorkCard />
+        <WorkCard
+            src={"/public/videos/mixkit-animation-of-buildings-popping-up-on-a-street-99712-hd-ready.mp4"}
+            // poster={trees}
+            // src={s.src}
+            // poster={s.poster}
+            // className="h-[clamp(230px,30vw,800px)] w-full object-cover rounded-lg"
+            resetOnLeave
+            playFromStartOnEnter={false}
+          />
+            <WorkCard
+            src={"/public/videos/mixkit-animation-of-buildings-popping-up-on-a-street-99712-hd-ready.mp4"}
+            // poster={trees}
+            // src={s.src}
+            // poster={s.poster}
+            // className="h-[clamp(230px,30vw,800px)] w-full object-cover rounded-lg"
+            resetOnLeave
+            playFromStartOnEnter={false}
+          />
         <div className="lg:col-span-2">
-          <WorkCard />
+      <WorkCard
+            src={"/public/videos/mixkit-animation-of-buildings-popping-up-on-a-street-99712-hd-ready.mp4"}
+            // poster={trees}
+            // src={s.src}
+            // poster={s.poster}
+            // className="h-[clamp(230px,30vw,800px)] w-full object-cover rounded-lg"
+            resetOnLeave
+            playFromStartOnEnter={false}
+          />
         </div>
       </div>
     </section>

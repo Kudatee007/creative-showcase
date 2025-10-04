@@ -1,14 +1,56 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      console.log("ScrollY:", window.scrollY); // Debugging
+      setScrolled(window.scrollY > 160);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="flex justify-between items-center p-4 fixed z-50 w-full bg-white-100">
-      <p className="text-[12px]">logo</p>
+    <header className="fixed top-0 flex justify-between items-center p-4 z-50 w-full max-w-screen bg-white-100">
+      <a href="#" className="text-xs">
+        logo
+      </a>
+      <div className="hidden md:flex justify-between w-full text-xs px-[23%]">
+        <span
+          className={`transition-opacity duration-1500 ease-in-out ${scrolled ? "block opacity-100 visible" : "hidden opacity-0 invisible"}`}
+        >
+          Form&Fun
+        </span>
+        <span>Creative Technology Studio</span>
+      </div>
       <nav>
-        <ul className="flex items-center gap-3 text-mute">
-          <li className="text-[12px]">Studio</li>
-          <li className="text-[12px]">Contact</li>
-          <li className="text-[12px]">Work</li>
+        <ul className="ml-auto flex items-center gap-2 md:gap-6 text-[11px] md:text-sm text-black-100 font-bold">
+          <li>
+            <a
+              href="#studio"
+              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
+            >
+              Studio
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
+            >
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="#work"
+              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
+            >
+              Work
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

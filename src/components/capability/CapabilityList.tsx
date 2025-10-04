@@ -19,7 +19,22 @@ const CapabilityList = () => {
               px-2 /* Add spacing between slides */
             "
           >
-            <CapabiltyCard />
+            <CapabiltyCard
+              title="Technology"
+              items={[
+                "Spatial Computing (AR, VR, XR)",
+                "Web3 / Blockchain",
+                "AI Tools & Experiences",
+                "Game Development",
+                "Web Development",
+                "Rapid Prototyping",
+                "WebGL Experiences",
+              ]}
+              src=""
+              className="bg-[#9BE2ED]"
+              // bgColor=""
+              hoverBgColor="rgb(213, 242, 246)"
+            />
           </div>
           <div
             className="
@@ -30,7 +45,22 @@ const CapabilityList = () => {
               px-2
             "
           >
-            <CapabiltyCard />
+            <CapabiltyCard
+              title="Design"
+              items={[
+                "Creative Direction",
+                "Brand Identity",
+                "Art Direction",
+                "Design Systems",
+                "User Experience Design",
+                "Concept Design",
+                "User Interface Design",
+              ]}
+              src=""
+              className="bg-[#DFBBF0]"
+              // bgColor="bg-[#fbefff]"
+              hoverBgColor="rgb(228, 218, 232)"
+            />
           </div>
           <div
             className="
@@ -41,7 +71,21 @@ const CapabilityList = () => {
               px-2
             "
           >
-            <CapabiltyCard />
+            <CapabiltyCard
+              title="Motion & CGI"
+              items={[
+                "2D & 3D Animation",
+                "Character Design",
+                "2D & 3D Illustration",
+                "Motion Identity",
+                "Concept Art",
+                "FOOH",
+              ]}
+              src=""
+              className="bg-[#AFD5A3]"
+              // bgColor="red"
+              hoverBgColor="rgb(229, 244, 225)"
+            />
           </div>
         </div>
       </div>

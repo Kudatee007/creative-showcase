@@ -5,15 +5,17 @@ import Work from "../Work/WorkGrid";
 import FormAndFun from "../components/formandfun/FormAndFun";
 import CapabilityList from "../components/capability/CapabilityList";
 import Brands from "../components/brands/Brands";
+import Awards from "../components/award/Award";
 
 const HomePage = () => {
   return (
-    <div className="p-3">
+    <div className="p-3 md:p-4">
       <Hero />
       <Carousel />
       <Work />
       <FormAndFun />
       <CapabilityList />
+      <Awards />
       <Brands />
     </div>
   );

@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <p className="w-full text-center text-[22vw] font-normal">Form&fun</p>
+      <p className="w-full text-center text-[15vw] font-normal">Form&fun</p>
     </footer>
   );
 };

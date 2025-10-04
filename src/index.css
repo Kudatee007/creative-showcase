@@ -11,7 +11,8 @@
     "Segoe UI Symbol";
 }
 html {
-  font-family: var(--font-sans);
+  font-family: "Neue";
+  font-style: normal;
 }
 body {
   margin: 0;
@@ -50,4 +51,10 @@ button {
 *::before,
 *::after {
   box-sizing: inherit;
+} */
+/* header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
 } */
