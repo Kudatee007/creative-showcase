@@ -1,11 +1,14 @@
 import CapabiltyCard from "./CapabiltyCard";
 import useEmblaCarousel from "embla-carousel-react";
+import capVid1 from "/videos/portfolio1.mp4"
+import capVid2 from "/videos/portfolio2.mp4"
+import capVid3 from "/videos/portfolio3.mp4"
 
 const CapabilityList = () => {
   const [emblaRef] = useEmblaCarousel();
 
   return (
-    <div className="pt-10">
+    <div className="min-h-[50vh] md:min-h-[90vh]">
       <h3 className="pb-2">Expertise & Capabilities</h3>
       <div className="embla overflow-hidden w-full" ref={emblaRef}>
         <div className="embla__container flex w-full">
@@ -30,9 +33,9 @@ const CapabilityList = () => {
                 "Rapid Prototyping",
                 "WebGL Experiences",
               ]}
-              src=""
+              src={capVid1}
               className="bg-[#9BE2ED]"
-              // bgColor=""
+              bColor="rgb(213, 242, 246)"
               hoverBgColor="rgb(213, 242, 246)"
             />
           </div>
@@ -56,7 +59,7 @@ const CapabilityList = () => {
                 "Concept Design",
                 "User Interface Design",
               ]}
-              src=""
+              src={capVid2}
               className="bg-[#DFBBF0]"
               // bgColor="bg-[#fbefff]"
               hoverBgColor="rgb(228, 218, 232)"
@@ -81,7 +84,7 @@ const CapabilityList = () => {
                 "Concept Art",
                 "FOOH",
               ]}
-              src=""
+              src={capVid3}
               className="bg-[#AFD5A3]"
               // bgColor="red"
               hoverBgColor="rgb(229, 244, 225)"

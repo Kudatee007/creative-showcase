@@ -1,16 +1,18 @@
 import React from "react";
-
+// import { HeroTxt } from "../lib/HeroTxt";
 
 const Hero = () => {
   return (
     <div>
-      <h1 className="text-[clamp(12px,8vw,700px)] font-light text-center py-30 text-black-100">
-        Creative Showcase
+      <h1 className="text-[clamp(18px,10vw,700px)] font-normal text-center pb-20 pt-20 md:pt-30 text-black-100">
+      {/* <HeroTxt text="Creative Showcase"/> */}
+      FORM&FUN
       </h1>
+      {/* <div className="aspect-[3/2] cursor-auto w-full h-full"> */}
       <div>
         <video
-          className="absolut inset-0 h-[clamp(140px,50vw,700px)]  w-full object-cover"
-          src="/public/videos/mixkit-a-man-and-the-coast-2537-full-hd.mp4"
+          className="aspect-[4/2] cursor-auto w-full h-full object-cover rounded-lg"
+          src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759604931/formandfunsizzle_k1h5n4.mp4"
           autoPlay
           muted
           loop
@@ -19,18 +21,30 @@ const Hero = () => {
           // poster="/images/hero-poster.jpg"  // optional: add a poster for faster first paint
         />
 
-        {/* Optional: a subtle overlay for contrast on light clips */}
+        {/* an overlay for contrast on light clips */}
         <div className="absolute inset-0 bg-white/0" />
       </div>
       <div className="space-y-3 pt-14 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24">
-        <p className="text-[clamp(33px,3.5vw,65px)] leading-7 sm:leading-13 lg:leading-15 text-gray-100">
-          <span className="text-sm text-start pr-[18%] text-black-100 align-top">
+        <p
+          className="home-intro 
+    text-gray-200
+    tracking-[-0.1vw]
+    whitespace-normal
+    cursor-default
+    font-[Aeonik,sans-serif]
+    text-[4.4vw]
+    leading-[100%]
+    inline
+    max-[991px]:block max-[991px]:mb-[4vw] max-[991px]:text-[7vw]
+    max-[767px]:block max-[767px]:leading-[110%]"
+        >
+          <span className="text-sm text-start pr-[18%] text-black-20 align-top">
             The studio
-          </span>{" "}
+          </span>
           We are a global creative tech studio forging delightful experiences by
           blending design, technology, and storytelling. Driven to create value
-          for people and brands through interaction{""}
-          <button className="w-fit bg-black text-white text-sm py-3 px-5 border-none rounded-4xl align-middle">
+          for people and brands through interaction
+          <button className="w-full sm:w-[50%] lg:w-fit lg:ml-[1.4vw] mt-4 bg-black text-white text-sm py-3 px-5 border-none rounded-4xl align-middle">
             Learn more
           </button>
         </p>

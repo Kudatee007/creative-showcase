@@ -2,8 +2,11 @@ import { useRef } from "react";
 
 type HoverVideoCardProps = {
   src: string;
+  title: string;
+  desc: string;
   poster?: string;
   className?: string;
+  txtColor?: string;
   resetOnLeave?: boolean;
   playFromStartOnEnter?: boolean;
   ariaHidden?: boolean;
@@ -11,8 +14,11 @@ type HoverVideoCardProps = {
 
 export default function WorkCard({
   src,
+  title,
+  desc,
   poster,
   className = "",
+  txtColor ="",
   resetOnLeave = true,
   playFromStartOnEnter = false,
   ariaHidden = true,
@@ -41,12 +47,12 @@ export default function WorkCard({
       onBlur={pause}
       onTouchStart={play}
       onTouchEnd={pause}
-      // optional keyboard focus target
+      // keyboard focus target
       tabIndex={0}
     >
       <video
         ref={ref}
-        className={`rounded-lg w-full h-full object-cover max-h-[600px] ${className}`}
+        className={`rounded-lg w-full h-[60vw] object-cover max-h-[600px] ${className}`}
         src={src}
         poster={poster}
         muted
@@ -55,37 +61,23 @@ export default function WorkCard({
         aria-hidden={ariaHidden}
         aria-label={ariaHidden ? undefined : "Preview video"}
       />
-
-      {/* Overlay now ignores pointer so it won't cancel hover */}
-      {/* <div className="pointer-events-auto absolute inset-0 z-10 hidden lg:group-hover:flex lg:justify-between p-4">
-        <div className="flex w-full gap-[20%]">
-          <p className="text-sm leading-none">Oreo x Pacman</p>
-          <span className="text-[8px] leading-none">AR EXPERIENCE</span>
-        </div>
-        <button
-          className="pointer-events-auto h-0"
-          aria-label="Open case"
-        >
-          +
-        </button>
-      </div> */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden lg:block">
+      <div className="pointer-events-none md:absolute w-full top-0 z-10 lg:block">
         <div
           className="
-      m-4 flex items-start justify-between
-      opacity-0 translate-y-4 transition-opacity duration-1500 ease-out
-      group-hover:opacity-100 group-hover:translate-y-0
+      md:m-3 md:flex md:items-center md:justify-between
+      md:opacity-0 md:translate-y-0 md:transition-opacity md:duration-200 md:ease-out
+      md:group-hover:opacity-100 md:group-hover:translate-x-0
     "
         >
           {/* Left content */}
-          <div className="flex w-full gap-[20%]">
-            <p className="text-sm leading-none">Oreo x Pacman</p>
-            <span className="text-[10px] leading-none">AR EXPERIENCE</span>
+          <div className="flex flex-col md:flex-row py-3 md:py-0 w-full md:gap-[20%]">
+            <p className={`text-sm md:text-[16px] leading-none pb-[6px] text-black-20 ${txtColor}`}>{title}</p>
+            <span className={`text-[8px] md:text-sm leading-none text-gray-400 pb-2 ${txtColor}`}>{desc}</span>
+            <span className="bg-gray-200 py-1 px-2 text-[8px] w-fit rounded-2xl md:hidden">COMING SOON</span>
           </div>
-
           {/* Plus button (clickable) */}
           <button
-            className="pointer-events-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-black text-base leading-none"
+            className={`pointer-events-auto h-8 w-8 items-center justify-center text-base leading-none hidden md:inline-flex ${txtColor}`}
             aria-label="Open case"
           >
             +

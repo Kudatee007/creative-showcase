@@ -1,48 +1,65 @@
 import React from "react";
+import logo from "/public/logo.svg";
 
 const Footer = () => {
   return (
     <footer className="w-full p-3">
       <section>
         <div className="flex flex-col space-y-8">
-          <div className="flex justify-between items-start pr-12 md:pr-36 w-full">
-            <div className="basis-[40%] lg:basis-[100%]">
-              <p>logo</p>
+          <div className="grid grid-cols-3 items-start w-full md:grid md:grid-cols- md:gap-x-[1vw]">
+            <div className="md:col-span-1">
+              <a href="#" className="text-xs">
+                <img src={logo} alt="logo" className="w-[12vw] md:w-[5vw] lg:w-[3vw]" />
+              </a>
             </div>
-            <div className="flex-1 lg:flex lg:justify-between gap-24">
-              <div className="flex justify-between w-full pb-8 lg:gap-14">
-                <div>
-                  <h6>Menu</h6>
-                  <ul>
-                    <li className="text-xs">Studio</li>
-                    <li className="text-xs">Contact</li>
-                    <li className="text-xs">Work</li>
+            <div className="lg:grid lg:grid-cols-4 lg:w-full gap-24 ">
+              <div className="grid grid-cols-4 w-full pb-8 lg:gap-14 lg:col-span-2">
+                <div className="col-span-3">
+                  <h6 className="text-gray-400 text-[clamp(14px,2.5vw,15px)] font-normal">
+                    Menu
+                  </h6>
+                  <ul className="text-[clamp(14px,3vw,15px)]">
+                    <li className="text-black-20 leading-5">Studio</li>
+                    <li className="text-black-20 leading-5">Contact</li>
+                    <li className="text-black-20 leading-5">Work</li>
                   </ul>
                 </div>
-                <div>
-                  <h6>Social</h6>
-                  <ul>
-                    <li className="text-xs">Instagram</li>
-                    <li className="text-xs">Linkedin</li>
-                    <li className="text-xs">Behance</li>
+                <div className="">
+                  <h6 className="text-gray-400 text-[clamp(14px,2.5vw,15px)] font-normal">
+                    Social
+                  </h6>
+                  <ul className="text-[clamp(14px,2.5vw,15px)]">
+                    <li className="text-black-20 leading-5">Instagram</li>
+                    <li className="text-black-20 leading-5">Linkedin</li>
+                    <li className="text-black-20 leading-5">Behance</li>
                   </ul>
                 </div>
               </div>
-              <div className="flex flex-col items-center space-y-8 md:flex-row md:justif-center md:items-center md:space-y-0 md:justify-between lg:flex-col lg:gap-5">
+              <div className="flex flex-col items-start space-y-8 md:flex-row md:items-center md:space-y-0 md:justify-between lg:flex-col lg:gap-5">
                 <div>
-                  <h6>Business enquires</h6>
-                  <p>timmy7@gmail.com</p>
+                  <h6 className="text-gray-400 text-[clamp(14px,2.5vw,15px)] font-normal">
+                    Business enquires
+                  </h6>
+                  <p className="text-[clamp(14px,2.5vw,15px)] text-black-20 leading-5">
+                    timmy7@gmail.com
+                  </p>
                 </div>
                 <div>
-                  <h6>Join our team</h6>
-                  <p>apply@forman.co</p>
+                  <h6 className="text-gray-400 text-[clamp(14px,2.5vw,15px)] font-normal">
+                    Join our team
+                  </h6>
+                  <p className="text-[clamp(14px,2.5vw,15px)] text-black-20 leading-5">
+                    apply@forman.co
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <p className="w-full text-center text-[15vw] font-normal">Form&fun</p>
+      <p className="text-[clamp(25px,10vw,120px)] text-center pt-10">
+        Creative Showcase
+      </p>
     </footer>
   );
 };

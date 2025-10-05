@@ -15,7 +15,7 @@ const Awards: React.FC = () => {
   const awards: Award[] = [
     {
       id: "01",
-      title: "Awward",
+      title: "Awwards",
       project: "Form&Fun Portfolio",
       categories: [
         "1x Site of the Day",
@@ -107,9 +107,9 @@ const Awards: React.FC = () => {
   return (
     // <div className="min-h-screen bg-white mt-32">
     //   <div className="w-full mx-auto">
-    <div className="w-full mx-auto">
+    <div className="w-full">
       {/* Header */}
-      <h3 className="text-5xl md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-16 md:mb-24">
+      <h3 className="text-[40px] leading-none md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-8 mt-20">
         AN AWARD
         <br />
         WINNING STUDIO
@@ -121,7 +121,7 @@ const Awards: React.FC = () => {
           {awards.map((award) => (
             <div
               key={award.id}
-              className="grid grid-cols-1 items-start gap-x-6 gap-y-6 py-8 border-t w-[50%] border-gray-300 pr-4 embla__slide
+              className="grid grid-cols-1 items-start gap-x-6 gap-y-3 py-8 border-t w-[50%] border-gray-300 pr-4 embla__slide
         min-w-0 p-1 flex-[0_0_83%]"
             >
               {/* ID */}
@@ -129,7 +129,7 @@ const Awards: React.FC = () => {
 
               {/* Title (top-aligned with rest, left only) */}
               <div className="col-span-1">
-                <h4 className="text-left text-lg font-extrabold lg:py-0">
+                <h4 className="text-left text-lg font-normal lg:py-0">
                   {award.title}
                 </h4>
               </div>
@@ -137,14 +137,14 @@ const Awards: React.FC = () => {
               {/* Project */}
               <div className="">
                 <h5 className="text-xs text-gray-400 mb-1">Project</h5>
-                <p className="text-left text-[10px] md:text-xs">{award.project}</p>
+                <p className="text-left text-xs">{award.project}</p>
               </div>
 
               {/* Categories */}
               <div>
                 <h5 className="text-xs text-gray-400 mb-1">Category</h5>
                 {award.categories.map((category, idx) => (
-                  <p key={idx} className="text-left text-[10px] md:text-xs leading-snug mb-1">
+                  <p key={idx} className="text-left text-xs leading-snug">
                     {category}
                   </p>
                 ))}
@@ -153,7 +153,7 @@ const Awards: React.FC = () => {
               {/* Year */}
               <div>
                 <h5 className="text-xs text-gray-400 mb-1">Year</h5>
-                <p className="tabular-nums text-left text-[10px] md:text-xs">{award.year}</p>
+                <p className="tabular-nums text-left text-xs">{award.year}</p>
               </div>
             </div>
           ))}
@@ -172,22 +172,22 @@ const Awards: React.FC = () => {
 
             {/* Title */}
             <div className="col-span-1">
-              <h4 className="text-left text-lg font-extrabold">
+              <h4 className="text-left text-black-20 text-[1.5vw] font-normal">
                 {award.title}
               </h4>
             </div>
 
             {/* Project */}
             <div>
-              <h5 className="text-xs text-gray-400 mb-1">Project</h5>
-              <p className="text-left text-xs">{award.project}</p>
+              <h5 className="text-xs text-gray-400 mb-1 text-[1vw]">Project</h5>
+              <p className="text-left text-sm">{award.project}</p>
             </div>
 
             {/* Categories */}
             <div>
               <h5 className="text-xs text-gray-400 mb-1">Category</h5>
               {award.categories.map((category, idx) => (
-                <p key={idx} className="text-left text-xs leading-snug">
+                <p key={idx} className="text-left text-sm leading-snug">
                   {category}
                 </p>
               ))}
@@ -196,7 +196,7 @@ const Awards: React.FC = () => {
             {/* Year */}
             <div>
               <h5 className="text-xs text-gray-400 mb-1">Year</h5>
-              <p className="tabular-nums text-left text-xs">{award.year}</p>
+              <p className="tabular-nums text-left text-sm">{award.year}</p>
             </div>
           </div>
         ))}

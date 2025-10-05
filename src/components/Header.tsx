@@ -1,55 +1,104 @@
 import { useEffect, useState } from "react";
+import logo from "/public/logo.svg";
 
-const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+function useScrollTrigger(threshold: number = 160) {
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      console.log("ScrollY:", window.scrollY); // Debugging
-      setScrolled(window.scrollY > 160);
+    let ticking = false;
+
+    const update = () => {
+      setIsActive(window.scrollY > threshold);
+      ticking = false;
     };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    // set initial on mount
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [threshold]);
+
+  return isActive;
+}
+
+type SwapTextProps = {
+  text1: string; // shown before scroll
+  text2: string; // shown after scroll
+  isActive: boolean;
+  className?: string;
+};
+
+function SwapText({ text1, text2, isActive, className }: SwapTextProps) {
+  return (
+    <div
+      className={`relative overflow-hidden h-6 md:h-7 hidden md:block ${className ?? ""}`}
+    >
+      {/* initial text (slides up on activate) */}
+      <span
+        className={[
+          "absolute inset-0 flex items-center",
+          "transition-transform duration-500 ease-in-out",
+          isActive ? "-translate-y-full" : "translate-y-0",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-[#1d1d1d] font-normal",
+        ].join(" ")}
+      >
+        {text1}
+      </span>
+
+      {/* active text (enters from bottom) */}
+      <span
+        className={[
+          "absolute inset-0 flex items-center",
+          "transition-transform duration-500 ease-in-out",
+          isActive ? "translate-y-0" : "translate-y-full",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-[#1d1d1d] font-normal",
+        ].join(" ")}
+      >
+        {text2}
+      </span>
+    </div>
+  );
+}
+
+const Header = () => {
+  const isScrolled = useScrollTrigger();
 
   return (
-    <header className="fixed top-0 flex justify-between items-center p-4 z-50 w-full max-w-screen bg-white-100">
+    <header
+      className="fixed top-0 z-[100] w-full h-[46px] p-3 md:p-[11px] bg-white
+        flex justify-between items-center
+        md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
+    >
       <a href="#" className="text-xs">
-        logo
+        <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
       </a>
-      <div className="hidden md:flex justify-between w-full text-xs px-[23%]">
-        <span
-          className={`transition-opacity duration-1500 ease-in-out ${scrolled ? "block opacity-100 visible" : "hidden opacity-0 invisible"}`}
-        >
-          Form&Fun
-        </span>
-        <span>Creative Technology Studio</span>
-      </div>
+      <SwapText
+        text1="Creative Technology Studio"
+        text2="Form&Fun"
+        isActive={isScrolled}
+      />
+      <SwapText
+        text1=""
+        text2="Creative Technology Studio"
+        isActive={isScrolled}
+      />
       <nav>
-        <ul className="ml-auto flex items-center gap-2 md:gap-6 text-[11px] md:text-sm text-black-100 font-bold">
+        <ul className="ml-auto flex items-center justify-end gap-2 md:gap-[1vw] text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal">
           <li>
-            <a
-              href="#studio"
-              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-            >
-              Studio
-            </a>
+            <a href="#studio">Studio</a>
           </li>
           <li>
-            <a
-              href="#contact"
-              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-            >
-              Contact
-            </a>
+            <a href="#contact">Contact</a>
           </li>
           <li>
-            <a
-              href="#work"
-              // className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-            >
-              Work
-            </a>
+            <a href="#work">Work</a>
           </li>
         </ul>
       </nav>

@@ -10,7 +10,7 @@ type CapabiltyCardProps = {
   items: string[];
   poster?: string;
   /** CSS color strings, e.g. "#fbefff" or "rgb(191,219,254)" */
-  bgColor?: string;
+  bColor?: string;
   hoverBgColor?: string;
   resetOnLeave?: boolean;
   playFromStartOnEnter?: boolean;
@@ -28,8 +28,8 @@ export default function CapabiltyCard({
   title,
   items = [],
   poster = "",
-  bgColor,                 // optional
-  hoverBgColor,            // optional
+  bColor, // optional
+  hoverBgColor, // optional
   resetOnLeave = true,
   playFromStartOnEnter = false,
   ariaHidden = true,
@@ -57,7 +57,7 @@ export default function CapabiltyCard({
   const mergedCardV: Variants = {
     rest: {
       ...(cardVariants?.rest as object),
-      ...(bgColor ? { backgroundColor: bgColor } : {}),
+      // ...(bgColor ? { backgroundColor: bgColor } : {}),
     },
     hover: {
       ...(cardVariants?.hover as object),
@@ -74,10 +74,20 @@ export default function CapabiltyCard({
         whileTap={{ scale: 0.98 }}
         variants={mergedCardV}
         transition={{ type: "spring", stiffness: 200, damping: 18 }}
-        className={`w-full min-w-[200px] rounded-lg cursor-pointer ${className}`}
+        className={`w-full min-w-[200px] rounded-lg cursor-pointer hover:p-3 md:hover:p-6 ${className}`}
         style={{ borderRadius: 12 }}
       >
-        <article>
+        <article
+          // className={`md:p-0 md:bg-transparent ${
+          //   bColor === "rgb(213, 242, 246)"
+          //     ? "bg-[rgb(213, 242, 246)]"
+          //     : bColor === "#DFBBF0"
+          //       ? "bg-[#DFBBF0]"
+          //       : bColor === "purple"
+          //         ? "bg-purple-500"
+          //         : ""
+          // }`}
+        >
           <figure
             className={`overflow-hidden rounded-md flex justify-center items-center h-[40vh] md:h-[80vh] lg:h-[55vh] z-10 ${className}`}
             onPointerEnter={play}
@@ -90,7 +100,9 @@ export default function CapabiltyCard({
           >
             <motion.video
               ref={ref}
-              className="rounded-lg w-[50%] h-[50%] object-cover max-h-[600px] z-20"
+              // className="rounded-lg w-[50%] h-[50%] object-cover max-h-[600px] z-20"
+              className="rounded-lg object-cover z-20 w-[100%] h-[100%]"
+              // style={{ width: 120, height: 120 }}
               src={
                 src ||
                 "/public/videos/mixkit-animation-of-purple-background-and-white-triangles-99548-hd-ready.mp4"
@@ -117,7 +129,7 @@ export default function CapabiltyCard({
             {items.map((item, i) => (
               <motion.li
                 key={i}
-                className="text-[10px] md:text-xs 2xl:text-sm"
+                className="text-[10px] md:text-sm 2xl:text-base"
                 variants={itemVariants}
               >
                 {item}
