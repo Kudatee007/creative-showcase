@@ -15,7 +15,7 @@ const FormAndFun = () => {
   }, []);
 
   return (
-    <section className="pt-10">
+    <section className="py-10 md:py-15 lg:py-20">
       <div className="marqueee pb-5">
         <div
           className="marqueee-content text-black-100 text-[170px]"

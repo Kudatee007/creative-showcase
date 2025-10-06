@@ -1,21 +1,28 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Carousel from "../components/Carousel";
-import Work from "../Work/WorkGrid";
+import Slider from "../components/Slider";
+import Work from "../components/work/WorkGrid";
 import FormAndFun from "../components/formandfun/FormAndFun";
 import CapabilityList from "../components/capability/CapabilityList";
 import Brands from "../components/brands/Brands";
+import Awards from "../components/award/Award";
 
-const HomePage = () => {
+interface HomePageProps {
+  setCursorMode: (m: "idle" | "view") => void;
+  setCursorText: (t: string) => void;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ setCursorMode, setCursorText }) => {
   return (
-    <div className="p-3">
+    <main>
       <Hero />
-      <Carousel />
-      <Work />
+      <Slider setCursorMode={setCursorMode} setCursorText={setCursorText}/>
+      <Work setCursorMode={setCursorMode} setCursorText={setCursorText}/>
       <FormAndFun />
       <CapabilityList />
+      <Awards />
       <Brands />
-    </div>
+    </main>
   );
 };
 

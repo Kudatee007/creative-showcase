@@ -1,14 +1,107 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import logo from "/public/logo.svg";
+
+function useScrollTrigger(threshold: number = 160) {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const update = () => {
+      setIsActive(window.scrollY > threshold);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    // set initial on mount
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+
+  return isActive;
+}
+
+type SwapTextProps = {
+  text1: string; // shown before scroll
+  text2: string; // shown after scroll
+  isActive: boolean;
+  className?: string;
+};
+
+function SwapText({ text1, text2, isActive, className }: SwapTextProps) {
+  return (
+    <div
+      className={`relative overflow-hidden h-6 md:h-7 hidden md:block ${className ?? ""}`}
+    >
+      {/* initial text (slides up on activate) */}
+      <span
+        className={[
+          "absolute inset-0 flex items-center",
+          "transition-transform duration-500 ease-in-out",
+          isActive ? "-translate-y-full" : "translate-y-0",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal",
+        ].join(" ")}
+      >
+        {text1}
+      </span>
+
+      {/* active text */}
+      <span
+        className={[
+          "absolute inset-0 flex items-center",
+          "transition-transform duration-500 ease-in-out",
+          isActive ? "translate-y-0" : "translate-y-full",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal",
+        ].join(" ")}
+      >
+        {text2}
+      </span>
+    </div>
+  );
+}
 
 const Header = () => {
+  const isScrolled = useScrollTrigger();
+
   return (
-    <header className="flex justify-between items-center p-4 fixed z-50 w-full bg-white-100">
-      <p className="text-[12px]">logo</p>
+    <header
+      className="fixed top-0 z-[100] w-full h-[46px] p-3 md:p-[11px] bg-white
+        flex justify-between items-center
+        md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
+    >
+      <div>
+        <a href="/" className="text-xs">
+          <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
+        </a>
+      </div>
+      <SwapText
+        text1="Creative Technology Studio"
+        text2="Form&Fun"
+        isActive={isScrolled}
+      />
+      <SwapText
+        text1=""
+        text2="Creative Technology Studio"
+        isActive={isScrolled}
+      />
       <nav>
-        <ul className="flex items-center gap-3 text-mute">
-          <li className="text-[12px]">Studio</li>
-          <li className="text-[12px]">Contact</li>
-          <li className="text-[12px]">Work</li>
+        <ul className="ml-auto flex items-center justify-end gap-2 md:gap-[1vw] text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal">
+          <li>
+            <a href="#studio">Studio</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="#work">Work</a>
+          </li>
         </ul>
       </nav>
     </header>
