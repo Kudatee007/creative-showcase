@@ -52,13 +52,13 @@ function SwapText({ text1, text2, isActive, className }: SwapTextProps) {
         {text1}
       </span>
 
-      {/* active text (enters from bottom) */}
+      {/* active text */}
       <span
         className={[
           "absolute inset-0 flex items-center",
           "transition-transform duration-500 ease-in-out",
           isActive ? "translate-y-0" : "translate-y-full",
-          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-[#1d1d1d] font-normal",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal",
         ].join(" ")}
       >
         {text2}

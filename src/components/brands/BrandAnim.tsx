@@ -30,7 +30,7 @@ export function BrandAnim({
 
   const currentItem = items[index];
   return (
-    <div className="relative flex items-center justify-center mx-auto w-full h-[50vw] md:h-[27vh] rounded-lg overflow-hidden">
+    <div className="relative flex items-center justify-center mx-auto w-full h-[50vw] lg:h-[27vh] rounded-lg overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
           key={index}
@@ -44,7 +44,6 @@ export function BrandAnim({
           }}
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
-          // className={`absolute inset-0 ${currentItem.bgColor} md:!bg-gray-100 flex items-center justify-center`}
           style={{ 
             backgroundColor: isHovered ? currentItem.hoverColor : currentItem.bgColor 
           }}

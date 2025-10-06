@@ -1,4 +1,3 @@
-// import { useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const slides = [
@@ -53,7 +52,7 @@ const Carousel = () => {
               loop
               playsInline
               preload="auto"
-              poster="/images/hero-poster.jpg"  // optional: add a poster for faster first paint
+              // poster="/images/hero-poster.jpg"
             />
           </div>
         ))}

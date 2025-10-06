@@ -1,14 +1,4 @@
-import React from "react";
-import BrandCard from "./BrandCard";
 import { BrandAnim } from "./BrandAnim";
-// import spotifyDark from "/spotify-logo.svg";
-// import spotifyLight from "/spotify-logo-white.svg";
-// import oreoDark from "/spotify-logo.svg";
-// import oreoLight from "/oreo-logo.svg";
-// import oreoDark from "/oreo-logo-white.svg";
-// import spotifyLight from "/spotify-logo-white.svg";
-// import spotifyDark from "/spotify-logo.svg";
-// import spotifyLight from "/spotify-logo-white.svg";
 
 const itemsMobile = [
   {

@@ -105,8 +105,6 @@ const Awards: React.FC = () => {
   ];
 
   return (
-    // <div className="min-h-screen bg-white mt-32">
-    //   <div className="w-full mx-auto">
     <div className="w-full">
       {/* Header */}
       <h3 className="text-[40px] leading-none md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-8 mt-20">
@@ -160,7 +158,7 @@ const Awards: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop: Plain stacked list */}
+      {/* Desktop */}
       <div className="hidden md:block border-t border-gray-300">
         {awards.map((award) => (
           <div
@@ -202,7 +200,6 @@ const Awards: React.FC = () => {
         ))}
       </div>
     </div>
-    // </div>
   );
 };
 

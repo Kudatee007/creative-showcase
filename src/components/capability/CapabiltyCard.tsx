@@ -9,7 +9,7 @@ type CapabiltyCardProps = {
   title: string;
   items: string[];
   poster?: string;
-  /** CSS color strings, e.g. "#fbefff" or "rgb(191,219,254)" */
+  /** CSS color strings */
   bColor?: string;
   hoverBgColor?: string;
   resetOnLeave?: boolean;
@@ -28,8 +28,7 @@ export default function CapabiltyCard({
   title,
   items = [],
   poster = "",
-  bColor, // optional
-  hoverBgColor, // optional
+  hoverBgColor,
   resetOnLeave = true,
   playFromStartOnEnter = false,
   ariaHidden = true,
@@ -53,11 +52,10 @@ export default function CapabiltyCard({
     if (resetOnLeave) v.currentTime = 0;
   };
 
-  // Merge user-provided colors into the base card variants
+  // Merge provided colors into the base card variants
   const mergedCardV: Variants = {
     rest: {
       ...(cardVariants?.rest as object),
-      // ...(bgColor ? { backgroundColor: bgColor } : {}),
     },
     hover: {
       ...(cardVariants?.hover as object),
@@ -78,15 +76,6 @@ export default function CapabiltyCard({
         style={{ borderRadius: 12 }}
       >
         <article
-          // className={`md:p-0 md:bg-transparent ${
-          //   bColor === "rgb(213, 242, 246)"
-          //     ? "bg-[rgb(213, 242, 246)]"
-          //     : bColor === "#DFBBF0"
-          //       ? "bg-[#DFBBF0]"
-          //       : bColor === "purple"
-          //         ? "bg-purple-500"
-          //         : ""
-          // }`}
         >
           <figure
             className={`overflow-hidden rounded-md flex justify-center items-center h-[40vh] md:h-[80vh] lg:h-[55vh] z-10 ${className}`}
@@ -100,9 +89,7 @@ export default function CapabiltyCard({
           >
             <motion.video
               ref={ref}
-              // className="rounded-lg w-[50%] h-[50%] object-cover max-h-[600px] z-20"
               className="rounded-lg object-cover z-20 w-[100%] h-[100%]"
-              // style={{ width: 120, height: 120 }}
               src={
                 src ||
                 "/public/videos/mixkit-animation-of-purple-background-and-white-triangles-99548-hd-ready.mp4"

@@ -4,6 +4,7 @@ type HoverVideoCardProps = {
   src: string;
   title: string;
   desc: string;
+  status?: string;
   poster?: string;
   className?: string;
   txtColor?: string;
@@ -16,6 +17,7 @@ export default function WorkCard({
   src,
   title,
   desc,
+  status,
   poster,
   className = "",
   txtColor ="",
@@ -73,7 +75,7 @@ export default function WorkCard({
           <div className="flex flex-col md:flex-row py-3 md:py-0 w-full md:gap-[20%]">
             <p className={`text-sm md:text-[16px] leading-none pb-[6px] text-black-20 ${txtColor}`}>{title}</p>
             <span className={`text-[8px] md:text-sm leading-none text-gray-400 pb-2 ${txtColor}`}>{desc}</span>
-            <span className="bg-gray-200 py-1 px-2 text-[8px] w-fit rounded-2xl md:hidden">COMING SOON</span>
+            <span className="bg-gray-200 py-1 px-2 text-[8px] w-fit rounded-2xl md:hidden">{status}</span>
           </div>
           {/* Plus button (clickable) */}
           <button
