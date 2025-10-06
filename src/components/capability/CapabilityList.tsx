@@ -1,14 +1,11 @@
 import CapabiltyCard from "./CapabiltyCard";
 import useEmblaCarousel from "embla-carousel-react";
-import capVid1 from "/videos/portfolio1.mp4"
-import capVid2 from "/videos/portfolio2.mp4"
-import capVid3 from "/videos/portfolio3.mp4"
 
 const CapabilityList = () => {
   const [emblaRef] = useEmblaCarousel();
 
   return (
-    <div className="min-h-[50vh] md:min-h-[90vh]">
+    <div className="min-h-[50vh] md:min-h-[90vh] p-3 md:p-4">
       <h3 className="pb-2">Expertise & Capabilities</h3>
       <div className="embla overflow-hidden w-full" ref={emblaRef}>
         <div className="embla__container flex w-full">
@@ -33,7 +30,7 @@ const CapabilityList = () => {
                 "Rapid Prototyping",
                 "WebGL Experiences",
               ]}
-              src={capVid1}
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642101/bhefcffg2eta2ry3k0f67vgol44t62chntda_hksyby.mp4"
               className="bg-[#9BE2ED]"
               bColor="rgb(213, 242, 246)"
               hoverBgColor="rgb(213, 242, 246)"
@@ -59,7 +56,7 @@ const CapabilityList = () => {
                 "Concept Design",
                 "User Interface Design",
               ]}
-              src={capVid2}
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642090/bheeicecyrhzyi3dd26lfivkab97k907q706_qzzyps.mp4"
               className="bg-[#DFBBF0]"
               // bgColor="bg-[#fbefff]"
               hoverBgColor="rgb(228, 218, 232)"
@@ -84,7 +81,7 @@ const CapabilityList = () => {
                 "Concept Art",
                 "FOOH",
               ]}
-              src={capVid3}
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642090/bheeiceccip4dtalzn188e4w87papbecrhou_an9son.mp4"
               className="bg-[#AFD5A3]"
               // bgColor="red"
               hoverBgColor="rgb(229, 244, 225)"

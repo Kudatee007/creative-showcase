@@ -4,7 +4,7 @@ import logo from "/public/logo.svg";
 const Footer = () => {
   return (
     <footer>
-      <div className="grid grid-cols-3 lg:grid-cols-12 p-3">
+      <div className="grid grid-cols-3 lg:grid-cols-12 p-3 md:p-4">
         <div className="lg:col-span-6">
           <a href="#" className="text-xs">
             <img

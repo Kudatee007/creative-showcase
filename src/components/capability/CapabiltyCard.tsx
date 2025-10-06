@@ -44,12 +44,11 @@ export default function CapabiltyCard({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024); // lg breakpoint
     };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const play = () => {
     const v = ref.current;
@@ -80,7 +79,7 @@ export default function CapabiltyCard({
       ...(cardVariants?.rest as object),
       // Apply hover background color on mobile
       ...(isMobile && hoverBgColor ? { backgroundColor: hoverBgColor } : {}),
-      ...(isMobile ? { padding: '0.8rem' } : {}),
+      ...(isMobile ? { padding: "0.8rem" } : {}),
     },
     hover: {
       ...(cardVariants?.hover as object),
@@ -100,8 +99,7 @@ export default function CapabiltyCard({
         className={`w-full min-w-[200px] h-full rounded-lg cursor-pointer hover:p-3 md:hover:p-6 ${className}`}
         style={{ borderRadius: 12 }}
       >
-        <article
-        >
+        <article>
           <figure
             className={`overflow-hidden rounded-md flex justify-center items-center h-[40vh] md:h-[80vh] lg:h-[55vh] z-10 ${className}`}
             onPointerEnter={play}
@@ -115,10 +113,7 @@ export default function CapabiltyCard({
             <motion.video
               ref={ref}
               className="rounded-lg object-cover z-20 w-[100%] h-[100%]"
-              src={
-                src ||
-                "/public/videos/mixkit-animation-of-purple-background-and-white-triangles-99548-hd-ready.mp4"
-              }
+              src={src}
               poster={poster}
               muted
               playsInline

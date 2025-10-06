@@ -11,6 +11,8 @@ type HoverVideoCardProps = {
   resetOnLeave?: boolean;
   playFromStartOnEnter?: boolean;
   ariaHidden?: boolean;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 export default function WorkCard({
@@ -24,6 +26,8 @@ export default function WorkCard({
   resetOnLeave = true,
   playFromStartOnEnter = false,
   ariaHidden = true,
+  onMouseEnter,
+  onMouseLeave,
 }: HoverVideoCardProps) {
   const ref = useRef<HTMLVideoElement | null>(null);
 
@@ -49,6 +53,8 @@ export default function WorkCard({
       onBlur={pause}
       onTouchStart={play}
       onTouchEnd={pause}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       // keyboard focus target
       tabIndex={0}
     >

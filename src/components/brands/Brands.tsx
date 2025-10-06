@@ -65,7 +65,7 @@ const itemsDesk = [
 
 const Brands = () => {
   return (
-    <section className="py-10">
+    <section className="p-3 md:p-4 pt-10">
       <h4 className="py-4 text-[clamp(32px,3.2vw,100px)] leading-9 md:pb-12 md:pt-30">
         Trusted by the world's leading brands
       </h4>

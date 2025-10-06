@@ -105,7 +105,7 @@ const Awards: React.FC = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full p-3 md:p-4">
       {/* Header */}
       <h3 className="text-[40px] leading-none md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-8 mt-20">
         AN AWARD

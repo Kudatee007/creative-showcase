@@ -11,6 +11,7 @@
 html {
   font-family: Aeonik, sans-serif;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -36,14 +37,4 @@ img {
 button {
   cursor: pointer;
 }
-/* *,
-*::before,
-*::after {
-  box-sizing: inherit;
-} */
-/* header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-} */
+
