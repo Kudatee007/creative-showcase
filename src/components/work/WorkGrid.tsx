@@ -1,4 +1,3 @@
-import React from "react";
 import "./WorkGrid.css";
 import WorkCard from "./WorkCard";
 
