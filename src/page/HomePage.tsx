@@ -9,7 +9,7 @@ import Awards from "../components/award/Award";
 
 const HomePage = () => {
   return (
-    <div className="p-3 md:p-4">
+    <div className="">
       <Hero />
       <Carousel />
       <Work />

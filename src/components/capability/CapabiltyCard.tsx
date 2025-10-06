@@ -1,5 +1,5 @@
 // components/CapabiltyCard.tsx
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { MotionConfig, motion, type Variants } from "framer-motion";
 import { videoV, titleV, cardV as defaultCardV } from "../../lib/anim.tsx";
 
@@ -38,6 +38,18 @@ export default function CapabiltyCard({
   itemVariants,
 }: CapabiltyCardProps) {
   const ref = useRef<HTMLVideoElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
 
   const play = () => {
     const v = ref.current;
@@ -53,9 +65,22 @@ export default function CapabiltyCard({
   };
 
   // Merge provided colors into the base card variants
+  // const mergedCardV: Variants = {
+  //   rest: {
+  //     ...(cardVariants?.rest as object),
+  //   },
+  //   hover: {
+  //     ...(cardVariants?.hover as object),
+  //     ...(hoverBgColor ? { backgroundColor: hoverBgColor } : {}),
+  //   },
+  // };
+
   const mergedCardV: Variants = {
     rest: {
       ...(cardVariants?.rest as object),
+      // Apply hover background color on mobile
+      ...(isMobile && hoverBgColor ? { backgroundColor: hoverBgColor } : {}),
+      ...(isMobile ? { padding: '0.8rem' } : {}),
     },
     hover: {
       ...(cardVariants?.hover as object),
@@ -72,7 +97,7 @@ export default function CapabiltyCard({
         whileTap={{ scale: 0.98 }}
         variants={mergedCardV}
         transition={{ type: "spring", stiffness: 200, damping: 18 }}
-        className={`w-full min-w-[200px] rounded-lg cursor-pointer hover:p-3 md:hover:p-6 ${className}`}
+        className={`w-full min-w-[200px] h-full rounded-lg cursor-pointer hover:p-3 md:hover:p-6 ${className}`}
         style={{ borderRadius: 12 }}
       >
         <article
@@ -112,7 +137,7 @@ export default function CapabiltyCard({
             {title}
           </motion.h3>
 
-          <ul className="lg:grid lg:grid-cols-2 space-y-1 gap-x-5">
+          <ul className="lg:grid lg:grid-cols-2 md:space-y-1 gap-x-5">
             {items.map((item, i) => (
               <motion.li
                 key={i}

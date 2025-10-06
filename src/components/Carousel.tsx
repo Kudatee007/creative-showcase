@@ -30,7 +30,7 @@ const slides = [
 const Carousel = () => {
   const [emblaRef] = useEmblaCarousel();
   return (
-    <div className="embla overflow-hidden" ref={emblaRef}>
+    <div className="embla overflow-hidden p-2 md:p-4" ref={emblaRef}>
       <div className="embla__container flex">
         {slides.map((slide, i) => (
           <div
@@ -45,7 +45,7 @@ const Carousel = () => {
             "
           >
             <video
-              className="h-[clamp(300px,32vw,800px)] w-full object-cover rounded-lg"
+              className="h-[clamp(300px,32vw,800px)] md:h-auto w-full object-cover rounded-lg"
               src={slide.src}
               autoPlay
               muted

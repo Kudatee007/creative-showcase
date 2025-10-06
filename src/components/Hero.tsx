@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="p-3 md:p-4">
       <h1 className="text-[clamp(18px,10vw,700px)] font-normal text-center pb-20 pt-20 md:pt-30 text-black-100">
       {/* <HeroTxt text="Creative Showcase"/> */}
       FORM&FUN

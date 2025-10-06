@@ -25,7 +25,7 @@ const BrandCard = ({
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="w-full md:bg-gray-100 h-full md:min-h-[155px] lg:min-h-[214px] rounded-lg flex items-center justify-center"
+      className="w-full md:bg-gray-100 h-full md:min-h-[170px] lg:min-h-[214px] rounded-lg flex items-center justify-center"
     >
       <motion.img
         src={isHovered ? lightImage : darkImage}
