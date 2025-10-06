@@ -52,7 +52,7 @@ export function BrandAnim({
           <motion.img
             src={isHovered ? currentItem.hoverImage : currentItem.image}
             alt={currentItem.alt || "Brand logo"}
-            className="max-h-[150px] max-w-[80%] object-contain"
+            className="h-[200px] w-[200px] max-h-[150px]"
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
           />

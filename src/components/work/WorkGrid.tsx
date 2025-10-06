@@ -19,15 +19,15 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
   return (
     <section className="pt-10">
       <div className="flex justify-between items-center p-3 md:p-4">
-        <h2 className="text-[clamp(22px,8vw,100px)] leading-none">WORK</h2>
+        <h2 className="text-[clamp(22px,8vw,100px)] leading-none text-black-20">WORK</h2>
         <div className="hidden lg:flex flex-col items-end align-bottom text-right">
-          <p className="text-[#1d1d1d]  text-[1vw]">Selected Work</p>
-          <span className="text-[#9a9a9a] text-[1vw]">(22-25)</span>
+          <p className="text-black-20  text-[1vw]">Selected Work</p>
+          <span className="text-gray-10 text-[1vw]">(22-25)</span>
         </div>
       </div>
       {/* marquee slider */}
       <div className="marquee pb-5">
-        <div className="marquee-content text-gray-100 text-[170px]">
+        <div className="marquee-content text-gray-200 text-[170px]">
           <span>
             EXPERIENTAL MOTION SPATIAL VR GEN-AI AR GAMING VIRTUAL-FASHION
             IMMERSIVE BRAND

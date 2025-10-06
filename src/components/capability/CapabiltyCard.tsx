@@ -125,14 +125,14 @@ export default function CapabiltyCard({
           </figure>
 
           <motion.h3
-            className="text-[23px] md:text-[35px] lg:text-[50px] text-black py-2"
+            className="text-[23px] md:text-[35px] lg:text-[50px] text-black-20 py-2"
             variants={titleVariants}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
             {title}
           </motion.h3>
 
-          <ul className="lg:grid lg:grid-cols-2 md:space-y-1 gap-x-5">
+          <ul className="lg:grid lg:grid-cols-2 md:space-y-1 gap-x-5 text-black-20">
             {items.map((item, i) => (
               <motion.li
                 key={i}

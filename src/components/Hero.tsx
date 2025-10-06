@@ -1,14 +1,11 @@
 import React from "react";
-// import { HeroTxt } from "../lib/HeroTxt";
 
 const Hero = () => {
   return (
     <div className="p-3 md:p-4">
-      <h1 className="text-[clamp(18px,10vw,700px)] font-normal text-center pb-20 pt-20 md:pt-30 text-black-100">
-      {/* <HeroTxt text="Creative Showcase"/> */}
-      FORM&FUN
+      <h1 className="text-[clamp(18px,10vw,700px)] font-normal text-center pb-20 pt-20 md:pt-30 text-black-20">
+      Creative Showcase
       </h1>
-      {/* <div className="aspect-[3/2] cursor-auto w-full h-full"> */}
       <div>
         <video
           className="aspect-[4/2] cursor-auto w-full h-full object-cover rounded-lg"
@@ -18,16 +15,13 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
-          // poster="/images/hero-poster.jpg"  // optional: add a poster for faster first paint
+          // poster="/images/hero-poster.jpg"  // for faster first paint
         />
-
-        {/* an overlay for contrast on light clips */}
-        <div className="absolute inset-0 bg-white/0" />
       </div>
       <div className="space-y-3 pt-14 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24">
         <p
           className="home-intro 
-    text-gray-200
+    text-gray-10
     tracking-[-0.1vw]
     whitespace-normal
     cursor-default
@@ -44,7 +38,7 @@ const Hero = () => {
           We are a global creative tech studio forging delightful experiences by
           blending design, technology, and storytelling. Driven to create value
           for people and brands through interaction
-          <button className="w-full sm:w-[50%] lg:w-fit lg:ml-[1.4vw] mt-4 bg-black text-white text-sm py-3 px-5 border-none rounded-4xl align-middle">
+          <button className="w-full sm:w-[50%] lg:w-fit lg:ml-[1.4vw] mt-4 bg-black-20 text-white text-sm py-3 px-5 border-none rounded-4xl align-middle">
             Learn more
           </button>
         </p>

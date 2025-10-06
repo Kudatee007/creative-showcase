@@ -46,7 +46,7 @@ function SwapText({ text1, text2, isActive, className }: SwapTextProps) {
           "absolute inset-0 flex items-center",
           "transition-transform duration-500 ease-in-out",
           isActive ? "-translate-y-full" : "translate-y-0",
-          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-[#1d1d1d] font-normal",
+          "text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal",
         ].join(" ")}
       >
         {text1}
@@ -76,9 +76,11 @@ const Header = () => {
         flex justify-between items-center
         md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
     >
-      <a href="#" className="text-xs">
-        <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
-      </a>
+      <div>
+        <a href="/" className="text-xs">
+          <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
+        </a>
+      </div>
       <SwapText
         text1="Creative Technology Studio"
         text2="Form&Fun"

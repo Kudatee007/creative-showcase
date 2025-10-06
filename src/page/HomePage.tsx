@@ -14,7 +14,7 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ setCursorMode, setCursorText }) => {
   return (
-    <div>
+    <main>
       <Hero />
       <Slider setCursorMode={setCursorMode} setCursorText={setCursorText}/>
       <Work setCursorMode={setCursorMode} setCursorText={setCursorText}/>
@@ -22,7 +22,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCursorMode, setCursorText }) => 
       <CapabilityList />
       <Awards />
       <Brands />
-    </div>
+    </main>
   );
 };
 
