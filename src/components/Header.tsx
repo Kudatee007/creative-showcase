@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import logo from "/public/logo.svg";
+import Hero from "./Hero";
 
 function useScrollTrigger(threshold: number = 160) {
   const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -71,39 +76,42 @@ const Header = () => {
   const isScrolled = useScrollTrigger();
 
   return (
-    <header
-      className="fixed top-0 z-[100] w-full h-[46px] p-3 md:p-[11px] bg-white
+    <header>
+      <div
+        className="fixed top-0 z-[100] w-full h-[46px] p-3 md:p-[11px] bg-white
         flex justify-between items-center
         md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
-    >
-      <div>
-        <a href="/" className="text-xs">
-          <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
-        </a>
+      >
+        <div>
+          <a href="/" className="text-xs">
+            <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
+          </a>
+        </div>
+        <SwapText
+          text1="Creative Technology Studio"
+          text2="Form&Fun"
+          isActive={isScrolled}
+        />
+        <SwapText
+          text1=""
+          text2="Creative Technology Studio"
+          isActive={isScrolled}
+        />
+        <nav>
+          <ul className="ml-auto flex items-center justify-end gap-2 md:gap-[1vw] text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal">
+            <li>
+              <a href="#studio">Studio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a href="#work">Work</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <SwapText
-        text1="Creative Technology Studio"
-        text2="Form&Fun"
-        isActive={isScrolled}
-      />
-      <SwapText
-        text1=""
-        text2="Creative Technology Studio"
-        isActive={isScrolled}
-      />
-      <nav>
-        <ul className="ml-auto flex items-center justify-end gap-2 md:gap-[1vw] text-[1vw] max-[991px]:text-[1.6vw] max-[767px]:text-[2.4vw] max-[479px]:text-[4vw] text-black-20 font-normal">
-          <li>
-            <a href="#studio">Studio</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a href="#work">Work</a>
-          </li>
-        </ul>
-      </nav>
+      <Hero />
     </header>
   );
 };

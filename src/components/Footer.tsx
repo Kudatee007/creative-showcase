@@ -1,4 +1,7 @@
 import logo from "/public/logo.svg";
+import { motion } from "framer-motion";
+
+const title = "Creative Showcase";
 
 const Footer = () => {
   return (
@@ -56,9 +59,24 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-[11.6vw] text-center pt-10 font-meduim">
-        Creative Showcase
-      </p>
+
+      <h6 className="text-[11vw] 2xl:text-[10vw] text-center pt-10 lg:pt-20 font-meduim flex justify-center flex-wrap">
+        {title.split("").map((char, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, y: 0, clipPath: "inset(0 100% 0 0)" }}
+            animate={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
+            transition={{
+              delay: i * 0.08,
+              duration: 0.7,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            className="inline-block"
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        ))}
+      </h6>
     </footer>
   );
 };

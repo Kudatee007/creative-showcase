@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 const cursorVariants = (mouseX: number, mouseY: number): Variants => ({
   idle: {
     opacity: 1,
-    height: 10,
-    width: 10,
+    height: 13,
+    width: 13,
     fontSize: "12px",
-    backgroundColor: "#808080",
+    backgroundColor: "#9a9a9a",
     x: mouseX,
     y: mouseY,
     transition: { type: "tween", duration: 0.05, ease: "linear" },
