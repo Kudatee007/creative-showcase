@@ -38,7 +38,7 @@ const Hero = () => {
         className="flex items-center justify-center w-full h-full"
       >
         <h1
-          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-16 pb-20 text-black-20 flex center flex-wrap"
+          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-16 lg:pt-28 pb-20 lg:pb-36 text-black-20 flex center flex-wrap"
         >
           {textShown &&
             title.split("").map((char, i) => (
