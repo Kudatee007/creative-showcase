@@ -5,7 +5,7 @@ const CapabilityList = () => {
   const [emblaRef] = useEmblaCarousel();
 
   return (
-    <div className="min-h-[50vh] md:min-h-[90vh] p-3 md:p-4">
+    <div className="min-h-[50vh] md:min-h-[95vh] p-3 md:p-4">
       <h3 className="pb-2 text-black-20">Expertise & Capabilities</h3>
       <div className="embla overflow-hidden w-full" ref={emblaRef}>
         <div className="embla__container flex w-full">

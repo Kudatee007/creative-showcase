@@ -38,7 +38,7 @@ const Hero = () => {
         className="flex items-center justify-center w-full h-full"
       >
         <h1
-          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-16 lg:pt-28 pb-20 lg:pb-36 text-black-20 flex center flex-wrap"
+          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-22 lg:pt-28 pb-28 lg:pb-36 text-black-20 flex center flex-wrap"
         >
           {textShown &&
             title.split("").map((char, i) => (
@@ -84,7 +84,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="space-y-3 pt-14 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24"
+            className="space-y-3 pt-20 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24"
           >
             <p
               className="home-intro 
@@ -99,13 +99,13 @@ const Hero = () => {
               max-[991px]:block max-[991px]:mb-[4vw] max-[991px]:text-[7vw]
               max-[767px]:block max-[767px]:leading-[110%]"
             >
-              <span className="text-sm text-start pr-[18%] text-black-20 align-top">
+              <span className="text-base text-start pr-[18%] text-black-20 align-top">
                 The studio
               </span>
               We are a global creative tech studio forging delightful
               experiences by blending design, technology, and storytelling.
               Driven to create value for people and brands through interaction
-              <button className="w-full sm:w-[50%] lg:w-fit lg:ml-[1.4vw] mt-4 bg-black-20 text-white text-sm py-3 px-5 border-none rounded-4xl align-middle">
+              <button className="w-full sm:w-[50%] lg:w-fit lg:ml-[1.4vw] mt-4 bg-black-20 text-white text-base py-3 px-5 border-none rounded-4xl align-middle">
                 Learn more
               </button>
             </p>
