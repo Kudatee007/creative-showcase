@@ -26,7 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="p-3 md:p-4 min-h-screen flex flex-col items-center justify-start overflow-hidden">
+    <div className="p-4 md:p-4 min-h-screen flex flex-col items-center justify-start overflow-hidden">
       {/* Animate text up after letter-by-letter animation */}
       <motion.div
         initial={{ y: "28vh" }}
@@ -38,7 +38,7 @@ const Hero = () => {
         className="flex items-center justify-center w-full h-full"
       >
         <h1
-          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-22 lg:pt-28 pb-28 lg:pb-36 text-black-20 flex center flex-wrap"
+          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-14 lg:pt-28 pb-18 lg:pb-36 text-black-20 flex center flex-wrap"
         >
           {textShown &&
             title.split("").map((char, i) => (
@@ -84,7 +84,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="space-y-3 pt-20 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24"
+            className="space-y-3 pt-16 pb-20 sm:pb-24 lg:pb-28 md:pt-20 lg:pt-24"
           >
             <p
               className="home-intro 
@@ -99,7 +99,7 @@ const Hero = () => {
               max-[991px]:block max-[991px]:mb-[4vw] max-[991px]:text-[7vw]
               max-[767px]:block max-[767px]:leading-[110%]"
             >
-              <span className="text-base text-start pr-[18%] text-black-20 align-top">
+              <span className="text-sm lg:text-base text-start pr-[18%] text-black-20 align-top">
                 The studio
               </span>
               We are a global creative tech studio forging delightful

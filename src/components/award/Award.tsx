@@ -107,7 +107,7 @@ const Awards: React.FC = () => {
   return (
     <div className="w-full p-3 md:p-4">
       {/* Header */}
-      <h3 className="text-[40px] leading-none md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-8 mt-20">
+      <h3 className="text-[55px] leading-none md:text-7xl lg:text-[6vw] text-[#1d1d1d] mb-8 mt-20">
         AN AWARD
         <br />
         WINNING STUDIO
@@ -127,20 +127,20 @@ const Awards: React.FC = () => {
 
               {/* Title (top-aligned with rest, left only) */}
               <div className="col-span-1">
-                <h4 className="text-left text-lg font-normal lg:py-0">
+                <h4 className="text-left text-[6vw] font-normal lg:py-0 pb-3">
                   {award.title}
                 </h4>
               </div>
 
               {/* Project */}
               <div className="">
-                <h5 className="text-xs text-gray-400 mb-1">Project</h5>
-                <p className="text-left text-xs">{award.project}</p>
+                <h5 className="text-[3.6vw] leading-[4vw] text-gray-400 mb-1">Project</h5>
+                <p className="text-left text-[3.6vw] leading-[4vw]">{award.project}</p>
               </div>
 
               {/* Categories */}
               <div>
-                <h5 className="text-xs text-gray-400 mb-1">Category</h5>
+                <h5 className="text-[3.6vw] leading-[4vw] text-gray-400 mb-1">Category</h5>
                 {award.categories.map((category, idx) => (
                   <p key={idx} className="text-left text-xs leading-snug">
                     {category}
@@ -150,8 +150,8 @@ const Awards: React.FC = () => {
 
               {/* Year */}
               <div>
-                <h5 className="text-xs text-gray-400 mb-1">Year</h5>
-                <p className="tabular-nums text-left text-xs">{award.year}</p>
+                <h5 className="text-[3.6vw] leading-[4vw] text-gray-400 mb-1">Year</h5>
+                <p className="tabular-nums text-left text-[3.6vw] leading-[4vw]">{award.year}</p>
               </div>
             </div>
           ))}

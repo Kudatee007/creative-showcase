@@ -17,7 +17,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
   };
   return (
     <section className="pt-10">
-      <div className="flex justify-between items-center p-3 md:p-4">
+      <div className="flex justify-between items-center p-4">
         <h2 className="text-[clamp(22px,8vw,100px)] leading-none text-black-20">WORK</h2>
         <div className="hidden lg:flex flex-col items-end align-bottom text-right">
           <p className="text-black-20  text-[1vw]">Selected Work</p>
@@ -37,7 +37,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
           </span>
         </div>
       </div>
-      <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3 items-stretch p-3 md:p-4">
+      <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3 items-stretch p-4">
         <div className="lg:col-span-2">
           <WorkCard
             src={"https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642096/bheeicdi21w0hkxyqiby6vxovghp64qh2wan_qwmt7l.mp4"}

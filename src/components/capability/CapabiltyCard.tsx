@@ -63,16 +63,6 @@ export default function CapabiltyCard({
     if (resetOnLeave) v.currentTime = 0;
   };
 
-  // Merge provided colors into the base card variants
-  // const mergedCardV: Variants = {
-  //   rest: {
-  //     ...(cardVariants?.rest as object),
-  //   },
-  //   hover: {
-  //     ...(cardVariants?.hover as object),
-  //     ...(hoverBgColor ? { backgroundColor: hoverBgColor } : {}),
-  //   },
-  // };
 
   const mergedCardV: Variants = {
     rest: {

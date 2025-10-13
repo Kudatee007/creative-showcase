@@ -78,13 +78,13 @@ const Header = () => {
   return (
     <header>
       <div
-        className="fixed top-0 z-[100] w-full h-[46px] p-3 md:p-[11px] bg-white
+        className="fixed top-0 z-[100] w-full h-[46px] py-3 px-4 md:p-[11px] bg-white
         flex justify-between items-center
         md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
       >
         <div>
           <a href="/" className="text-xs">
-            <img src={logo} alt="logo" className="w-[7.5vw] md:w-[1.7vw]" />
+            <img src={logo} alt="logo" className="w-[6vw] md:w-[1.7vw]" />
           </a>
         </div>
         <SwapText
