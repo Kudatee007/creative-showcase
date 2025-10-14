@@ -1,8 +1,28 @@
 import CapabiltyCard from "./CapabiltyCard";
 import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
 
 const CapabilityList = () => {
-  const [emblaRef] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect(); // initial
+  }, [emblaApi, onSelect]);
 
   return (
     <div className="min-h-[50vh] md:min-h-[95vh] p-3 md:p-4">
@@ -88,6 +108,19 @@ const CapabilityList = () => {
             />
           </div>
         </div>
+      </div>
+
+       {/* Pagination dots — visible only on mobile */}
+       <div className="flex justify-center mt-4 gap-2 md:hidden">
+        {scrollSnaps.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => emblaApi && emblaApi.scrollTo(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-all ${
+              i === selectedIndex ? "bg-black scale-110" : "bg-gray-300"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

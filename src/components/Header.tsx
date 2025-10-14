@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import logo from "/public/logo.svg";
 import Hero from "./Hero";
 
+interface HeaderProps {
+  textShown: boolean;
+  textMovedUp: boolean;
+  pageReady: boolean;
+}
+
 function useScrollTrigger(threshold: number = 160) {
   const [isActive, setIsActive] = useState(false);
 
@@ -72,15 +78,19 @@ function SwapText({ text1, text2, isActive, className }: SwapTextProps) {
   );
 }
 
-const Header = () => {
+const Header = ({ textShown, textMovedUp, pageReady }: HeaderProps) => {
   const isScrolled = useScrollTrigger();
 
   return (
     <header>
       <div
-        className="fixed top-0 z-[100] w-full h-[46px] py-3 px-4 md:p-[11px] bg-white
-        flex justify-between items-center
-        md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0"
+        className={[
+          pageReady ? "opacity-100" : "opacity-0",
+          "transition-opacity duration-500",
+          "fixed top-0 z-[100] w-full h-[46px] py-3 px-4 md:p-[11px] bg-white",
+          "flex justify-between items-center",
+          "md:grid md:grid-rows-[auto] md:grid-cols-4 md:gap-x-[1vw] md:gap-y-0",
+        ].join(" ")}
       >
         <div>
           <a href="/" className="text-xs">
@@ -111,7 +121,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <Hero />
+      <Hero textShown={textShown} textMovedUp={textMovedUp} pageReady={pageReady} />
     </header>
   );
 };

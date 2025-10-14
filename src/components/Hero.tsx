@@ -1,29 +1,13 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+interface HeroProps { 
+  textShown: boolean; 
+  textMovedUp: boolean; 
+  pageReady: boolean; 
+}
 
-const Hero = () => {
-  const [textShown, setTextShown] = useState(false);
-  const [textMovedUp, setTextMovedUp] = useState(false);
-  const [showRest, setShowRest] = useState(false); // NEW: controls video + paragraph timing
-
+const Hero = ({ textShown, textMovedUp, pageReady }: HeroProps) => {
   const title = "Creative Showcase";
 
-  useEffect(() => {
-    // start text animation after short load delay
-    const showText = setTimeout(() => setTextShown(true), 100);
-
-    // trigger upward move after all letters animate
-    const moveUp = setTimeout(() => setTextMovedUp(true), 2800);
-
-    // reveal rest of page after upward motion completes
-    const revealRest = setTimeout(() => setShowRest(true), 4000); // add delay for smooth finish
-
-    return () => {
-      clearTimeout(showText);
-      clearTimeout(moveUp);
-      clearTimeout(revealRest);
-    };
-  }, []);
 
   return (
     <div className="p-4 md:p-4 min-h-screen flex flex-col items-center justify-start overflow-hidden">
@@ -53,14 +37,14 @@ const Hero = () => {
                 }}
                 className="inline-block"
               >
-                {char === " " ? "\u00A0" : char}
+                {char}
               </motion.span>
             ))}
         </h1>
       </motion.div>
 
-      {/* Show rest of content AFTER heading finishes moving up */}
-      {showRest && (
+      {/* Show rest of content after heading finishes moving up */}
+      {pageReady && (
         <>
           {/* Video */}
           <motion.div

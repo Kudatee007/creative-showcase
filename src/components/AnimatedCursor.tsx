@@ -45,7 +45,7 @@ export default function AnimatedCursor({ mode = "idle", text = "" }: AnimatedCur
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[9999] rounded-full pointer-events-none flex items-center justify-center"
+      className="fixed top-0 left-0 z-[9999] rounded-full pointer-events-none hidden md:flex items-center justify-center"
       variants={variants}
       animate={mode}
       style={{ fontWeight: 600 }}
