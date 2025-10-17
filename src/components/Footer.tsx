@@ -1,9 +1,10 @@
-import logo from "/public/logo.svg";
+import React from "react";
+import logo from "/logo.svg";
 import { motion } from "framer-motion";
 
 const title = "Creative Showcase";
 
-const Footer = () => {
+const Footer = React.memo(function Footer() {
   return (
     <footer>
       <div className="grid grid-cols-3 lg:grid-cols-12 p-4">
@@ -79,6 +80,6 @@ const Footer = () => {
       </h6>
     </footer>
   );
-};
+});
 
 export default Footer;

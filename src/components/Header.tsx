@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "/public/logo.svg";
+import logo from "/logo.svg";
 import Hero from "./Hero";
 
 interface HeaderProps {

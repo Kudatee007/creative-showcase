@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-interface HeroProps { 
-  textShown: boolean; 
-  textMovedUp: boolean; 
-  pageReady: boolean; 
+interface HeroProps {
+  textShown: boolean;
+  textMovedUp: boolean;
+  pageReady: boolean;
 }
 
 const Hero = ({ textShown, textMovedUp, pageReady }: HeroProps) => {
   const title = "Creative Showcase";
-
 
   return (
     <div className="p-4 md:p-4 min-h-screen flex flex-col items-center justify-start overflow-hidden">
@@ -16,14 +15,12 @@ const Hero = ({ textShown, textMovedUp, pageReady }: HeroProps) => {
         initial={{ y: "28vh" }}
         animate={{ y: textMovedUp ? 0 : "28vh" }}
         transition={{
-          duration: 1.2,
-          ease: [0.65, 0, 0.35, 1],
+          duration: 1.8,
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="flex items-center justify-center w-full h-full"
       >
-        <h1
-          className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-14 lg:pt-28 pb-18 lg:pb-36 text-black-20 flex center flex-wrap"
-        >
+        <h1 className="text-[clamp(18px,10vw,700px)] font-normal text-center pt-14 lg:pt-28 pb-18 lg:pb-36 text-black-20 flex center flex-wrap">
           {textShown &&
             title.split("").map((char, i) => (
               <motion.span
@@ -54,12 +51,12 @@ const Hero = ({ textShown, textMovedUp, pageReady }: HeroProps) => {
           >
             <video
               className="aspect-[4/2] cursor-auto w-full h-full object-cover rounded-lg min-h-auto"
-              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759604931/formandfunsizzle_k1h5n4.mp4"
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:good,so_0/v1759604931/formandfunsizzle_k1h5n4.mp4"
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
             />
           </motion.div>
 

@@ -3,30 +3,31 @@ import {useCallback, useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642111/bheeicedy3ihyzyn31iuum3m4cldsk8dqlxe_wh4lip.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642111/bheeicedy3ihyzyn31iuum3m4cldsk8dqlxe_wh4lip.mp4",
     alt: "Project 1",
   },
   {
-    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642078/bheeicedz8a5tcbo6sr84repcz7zjtyfocua_zaf61j.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642078/bheeicedz8a5tcbo6sr84repcz7zjtyfocua_zaf61j.mp4",
     alt: "Project 2",
   },
   {
-    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/v1759639587/ILLpcsHOAB_576p_1744824343_vu4fee.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759639587/ILLpcsHOAB_576p_1744824343_vu4fee.mp4",
     alt: "Project 3",
   },
   {
-    src: "/videos/about4.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759639607/LCVDnqXAon_576p_1751149542_a65jqv.mp4",
     alt: "Project 4",
   },
   {
-    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/v1759639587/GWazvydWJs_576p_1744824344_wyftge.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759639587/GWazvydWJs_576p_1744824344_wyftge.mp4",
     alt: "Project 5",
   },
   {
-    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/v1759639607/LCVDnqXAon_576p_1751149542_a65jqv.mp4",
+    src: "https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642111/bheeicedy3ihyzyn31iuum3m4cldsk8dqlxe_wh4lip.mp4",
     alt: "Project 6",
   },
 ];
+
 
 type SliderProps = {
   setCursorMode: (m: "idle" | "view") => void;
@@ -82,7 +83,7 @@ const Slider = ({ setCursorMode, setCursorText }: SliderProps) => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               // poster="/images/hero-poster.jpg"
               onMouseEnter={dragEnter}
               onMouseLeave={leave}

@@ -1,29 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense, useMemo } from "react";
 import AnimatedCursor from "./components/AnimatedCursor";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import HomePage from "./page/HomePage";
+const HomePage = lazy(() => import("./page/HomePage"));
 
 function App() {
   const [cursorMode, setCursorMode] = useState<"idle" | "view">("idle");
   const [cursorText, setCursorText] = useState<string>("");
 
-  // Global reveal state 
+  // Global reveal state
   const [textShown, setTextShown] = useState(false); // start letter/clip animation
   const [textMovedUp, setTextMovedUp] = useState(false); // slide hero up
   const [pageReady, setPageReady] = useState(false); // reveal whole page
 
   useEffect(() => {
-    const t1 = setTimeout(() => setTextShown(true), 100);
-    const t2 = setTimeout(() => setTextMovedUp(true), 2500);
-    const t3 = setTimeout(() => setPageReady(true), 2700);
-
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
+    const timeouts = [
+      setTimeout(() => setTextShown(true), 100),
+      setTimeout(() => setTextMovedUp(true), 2500),
+      setTimeout(() => setPageReady(true), 3000),
+    ];
+    return () => timeouts.forEach(clearTimeout);
   }, []);
+
+  const cursorHandlers = useMemo(
+    () => ({
+      setCursorMode,
+      setCursorText,
+    }),
+    []
+  );
 
   return (
     <>
@@ -33,14 +38,11 @@ function App() {
         textMovedUp={textMovedUp}
         pageReady={pageReady}
       />
-      {pageReady && (
-        <>
-          <HomePage
-            setCursorMode={setCursorMode}
-            setCursorText={setCursorText}
-          />
+        {pageReady && (
+        <Suspense fallback={<div className="text-center p-10">Loading content...</div>}>
+          <HomePage {...cursorHandlers} />
           <Footer />
-        </>
+        </Suspense>
       )}
     </>
   );

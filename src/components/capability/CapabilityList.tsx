@@ -10,12 +10,10 @@ const CapabilityList = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
-
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -50,7 +48,7 @@ const CapabilityList = () => {
                 "Rapid Prototyping",
                 "WebGL Experiences",
               ]}
-              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642101/bhefcffg2eta2ry3k0f67vgol44t62chntda_hksyby.mp4"
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642101/bhefcffg2eta2ry3k0f67vgol44t62chntda_hksyby.mp4"
               className="bg-[#9BE2ED]"
               bColor="rgb(213, 242, 246)"
               hoverBgColor="rgb(213, 242, 246)"
@@ -76,7 +74,7 @@ const CapabilityList = () => {
                 "Concept Design",
                 "User Interface Design",
               ]}
-              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642090/bheeicecyrhzyi3dd26lfivkab97k907q706_qzzyps.mp4"
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642090/bheeicecyrhzyi3dd26lfivkab97k907q706_qzzyps.mp4"
               className="bg-[#DFBBF0]"
               // bgColor="bg-[#fbefff]"
               hoverBgColor="rgb(228, 218, 232)"
@@ -101,7 +99,7 @@ const CapabilityList = () => {
                 "Concept Art",
                 "FOOH",
               ]}
-              src="https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642090/bheeiceccip4dtalzn188e4w87papbecrhou_an9son.mp4"
+              src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642090/bheeiceccip4dtalzn188e4w87papbecrhou_an9son.mp4"
               className="bg-[#AFD5A3]"
               // bgColor="red"
               hoverBgColor="rgb(229, 244, 225)"
@@ -110,8 +108,8 @@ const CapabilityList = () => {
         </div>
       </div>
 
-       {/* Pagination dots — visible only on mobile */}
-       <div className="flex justify-center mt-4 gap-2 md:hidden">
+      {/* Pagination dots — visible only on mobile */}
+      <div className="flex justify-center mt-4 gap-2 md:hidden">
         {scrollSnaps.map((_, i) => (
           <button
             key={i}

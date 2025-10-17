@@ -18,7 +18,9 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
   return (
     <section className="pt-10">
       <div className="flex justify-between items-center p-4">
-        <h2 className="text-[clamp(22px,8vw,100px)] leading-none text-black-20">WORK</h2>
+        <h2 className="text-[clamp(22px,8vw,100px)] leading-none text-black-20">
+          WORK
+        </h2>
         <div className="hidden lg:flex flex-col items-end align-bottom text-right">
           <p className="text-black-20  text-[1vw]">Selected Work</p>
           <span className="text-gray-10 text-[1vw]">(22-25)</span>
@@ -40,7 +42,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
       <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3 items-stretch p-4">
         <div className="lg:col-span-2">
           <WorkCard
-            src={"https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642096/bheeicdi21w0hkxyqiby6vxovghp64qh2wan_qwmt7l.mp4"}
+            src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642096/bheeicdi21w0hkxyqiby6vxovghp64qh2wan_qwmt7l.mp4"
             title="Oreo x Pacman"
             desc="AIR EXPERIENCE"
             // poster={trees}
@@ -52,7 +54,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
           />
         </div>
         <WorkCard
-          src={"https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642676/YThAIwoXKB_576p_1744824072_ccmg6f.mp4"}
+          src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642676/YThAIwoXKB_576p_1744824072_ccmg6f.mp4"
           title="Doordash Summer of Dashpass"
           desc="CAMPAIGN"
           status="COMING SOON"
@@ -64,7 +66,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
           onMouseLeave={leave}
         />
         <WorkCard
-          src={"https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642080/bheeicea8cwvkf21vcnbg8jhx3wo0wyb42im_q9yvuz.mp4"}
+          src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642080/bheeicea8cwvkf21vcnbg8jhx3wo0wyb42im_q9yvuz.mp4"
           title="Widllet"
           desc=""
           // poster={trees}
@@ -76,7 +78,7 @@ const WorkGrid = ({ setCursorMode, setCursorText }: WorkGridProps) => {
         />
         <div className="lg:col-span-2">
           <WorkCard
-            src={"https://res.cloudinary.com/dm7vlpslq/video/upload/v1759642089/bheeicea3wowr2ifyqckn5737cnu42mewpr1_a8wqzo.mp4"}
+            src="https://res.cloudinary.com/dm7vlpslq/video/upload/f_auto,q_auto:eco,so_0/v1759642089/bheeicea3wowr2ifyqckn5737cnu42mewpr1_a8wqzo.mp4"
             title="Widllet"
             desc="BRAND IDENTITY APP"
             // poster={trees}
